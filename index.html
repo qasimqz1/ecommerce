@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QZ Stores - Shop the Simple Way</title>
+    <link rel="stylesheet" href="ecommerce.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">QZ</div>
+                <div class="brand-info">
+                    <h1>QZ Stores</h1>
+                    <p class="slogan">Shop the Simple Way</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+                <div class="wishlist-icon" onclick="toggleWishlist()">
+                    ❤️ <span id="wishlist-count">0</span>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="products" class="products-section">
+            <h2>Our Products</h2>
+            
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('electronics')">Electronics</button>
+                <button class="filter-btn" onclick="filterProducts('fashion')">Fashion</button>
+                <button class="filter-btn" onclick="filterProducts('home')">Home & Garden</button>
+                <button class="filter-btn" onclick="filterProducts('sports')">Sports</button>
+            </div>
+
+            <div class="products-grid">
+                <!-- Electronics Category -->
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop" alt="Wireless Headphones">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Wireless Headphones', 79.99, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Wireless Headphones</h3>
+                    <p class="price">£79.99</p>
+                    <p class="description">High-quality wireless headphones with noise cancellation and 30-hour battery life.</p>
+                    <button onclick="addToCart('Wireless Headphones', 79.99, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop" alt="Smart Watch">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Smart Watch', 159.99, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Smart Watch</h3>
+                    <p class="price">£159.99</p>
+                    <p class="description">Fitness tracking smartwatch with heart rate monitor and GPS capabilities.</p>
+                    <button onclick="addToCart('Smart Watch', 159.99, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop" alt="Gaming Laptop">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Gaming Laptop', 1049.99, 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Gaming Laptop</h3>
+                    <p class="price">£1049.99</p>
+                    <p class="description">High-performance gaming laptop with RTX graphics and 16GB RAM.</p>
+                    <button onclick="addToCart('Gaming Laptop', 1049.99, 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=200&fit=crop" alt="Bluetooth Speaker">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Bluetooth Speaker', 49.99, 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Bluetooth Speaker</h3>
+                    <p class="price">£49.99</p>
+                    <p class="description">Portable Bluetooth speaker with 360-degree sound and waterproof design.</p>
+                    <button onclick="addToCart('Bluetooth Speaker', 49.99, 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=300&h=200&fit=crop" alt="Smartphone">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Smartphone', 699.99, 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Smartphone</h3>
+                    <p class="price">£699.99</p>
+                    <p class="description">Latest smartphone with advanced camera system and 5G connectivity.</p>
+                    <button onclick="addToCart('Smartphone', 699.99, 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=200&fit=crop" alt="Tablet">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Tablet', 399.99, 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Tablet</h3>
+                    <p class="price">£399.99</p>
+                    <p class="description">10-inch tablet with high-resolution display and long battery life.</p>
+                    <button onclick="addToCart('Tablet', 399.99, 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <!-- Fashion Category -->
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop" alt="Running Shoes">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Running Shoes', 104.99, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Running Shoes</h3>
+                    <p class="price">£104.99</p>
+                    <p class="description">Comfortable running shoes with advanced cushioning and breathable material.</p>
+                    <button onclick="addToCart('Running Shoes', 104.99, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=200&fit=crop" alt="Leather Jacket">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Leather Jacket', 199.99, 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Leather Jacket</h3>
+                    <p class="price">£199.99</p>
+                    <p class="description">Premium leather jacket with classic design and modern fit.</p>
+                    <button onclick="addToCart('Leather Jacket', 199.99, 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop" alt="Designer Handbag">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Designer Handbag', 299.99, 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Designer Handbag</h3>
+                    <p class="price">£299.99</p>
+                    <p class="description">Luxury designer handbag with premium materials and elegant design.</p>
+                    <button onclick="addToCart('Designer Handbag', 299.99, 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <!-- Home & Garden Category -->
+                <div class="product-card" data-category="home">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" alt="Coffee Maker">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Coffee Maker', 89.99, 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Coffee Maker</h3>
+                    <p class="price">£89.99</p>
+                    <p class="description">Automatic coffee maker with programmable settings and thermal carafe.</p>
+                    <button onclick="addToCart('Coffee Maker', 89.99, 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" alt="Smart Home Hub">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Smart Home Hub', 149.99, 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Smart Home Hub</h3>
+                    <p class="price">£149.99</p>
+                    <p class="description">Central hub for controlling all your smart home devices from one place.</p>
+                    <button onclick="addToCart('Smart Home Hub', 149.99, 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" alt="Garden Tools Set">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Garden Tools Set', 79.99, 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Garden Tools Set</h3>
+                    <p class="price">£79.99</p>
+                    <p class="description">Complete set of professional garden tools for all your gardening needs.</p>
+                    <button onclick="addToCart('Garden Tools Set', 79.99, 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <!-- Sports Category -->
+                <div class="product-card" data-category="sports">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=300&h=200&fit=crop" alt="Basketball">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Basketball', 34.99, 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Basketball</h3>
+                    <p class="price">£34.99</p>
+                    <p class="description">Official size basketball with premium grip and durability.</p>
+                    <button onclick="addToCart('Basketball', 34.99, 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="sports">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop" alt="Yoga Mat">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Yoga Mat', 44.99, 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Yoga Mat</h3>
+                    <p class="price">£44.99</p>
+                    <p class="description">Non-slip yoga mat with extra cushioning for comfort during workouts.</p>
+                    <button onclick="addToCart('Yoga Mat', 44.99, 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="sports">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop" alt="Adjustable Dumbbells">
+                        <button class="wishlist-btn" onclick="toggleWishlistItem('Adjustable Dumbbells', 199.99, 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop')">🤍</button>
+                    </div>
+                    <h3>Adjustable Dumbbells</h3>
+                    <p class="price">£199.99</p>
+                    <p class="description">Space-saving adjustable dumbbells with weight range from 5-50kg.</p>
+                    <button onclick="addToCart('Adjustable Dumbbells', 199.99, 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button onclick="toggleCart()" class="close-cart">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: £<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Wishlist Sidebar -->
+    <div id="wishlist-sidebar" class="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h3>My Wishlist</h3>
+            <button onclick="toggleWishlist()" class="close-wishlist">×</button>
+        </div>
+        <div id="wishlist-items" class="wishlist-items">
+            <!-- Wishlist items will be added here dynamically -->
+        </div>
+        <div class="wishlist-footer">
+            <p class="wishlist-count">Items: <span id="wishlist-total-count">0</span></p>
+        </div>
+    </div>
+
+    <!-- Wishlist Overlay -->
+    <div id="wishlist-overlay" class="wishlist-overlay" onclick="toggleWishlist()"></div>
+
+    <footer>
+        <p>&copy; 2024 QZ Stores. Shop the Simple Way</p>
+        <p>Created by Muhammad Qasim | Contact: qasimqasim@qasim.com</p>
+    </footer>
+
+    <script src="ecommerce.js"></script>
+</body>
+</html>

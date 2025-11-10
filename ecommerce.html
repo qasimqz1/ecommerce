@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QZ Stores - Shop the Simple Way</title>
+    <link rel="stylesheet" href="ecommerce.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">QZ</div>
+                <div class="brand-info">
+                    <h1>QZ Stores</h1>
+                    <p class="slogan">Shop the Simple Way</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-btn">🌙 Dark</button>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="products" class="products-section">
+            <h2>Our Products</h2>
+            
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('electronics')">Electronics</button>
+                <button class="filter-btn" onclick="filterProducts('fashion')">Fashion</button>
+                <button class="filter-btn" onclick="filterProducts('home')">Home & Garden</button>
+                <button class="filter-btn" onclick="filterProducts('sports')">Sports</button>
+            </div>
+
+
+            <div class="products-grid">
+                <!-- Electronics Category -->
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop" alt="Wireless Headphones">
+                    <h3>Wireless Headphones</h3>
+                    <p class="price">£79.99</p>
+                    <p class="description">High-quality wireless headphones with noise cancellation and 30-hour battery life.</p>
+                    <button onclick="addToCart('Wireless Headphones', 79.99, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop" alt="Smart Watch">
+                    <h3>Smart Watch</h3>
+                    <p class="price">£159.99</p>
+                    <p class="description">Fitness tracking smartwatch with heart rate monitor and GPS capabilities.</p>
+                    <button onclick="addToCart('Smart Watch', 159.99, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop" alt="Gaming Laptop">
+                    <h3>Gaming Laptop</h3>
+                    <p class="price">£1049.99</p>
+                    <p class="description">High-performance gaming laptop with RTX graphics and 16GB RAM.</p>
+                    <button onclick="addToCart('Gaming Laptop', 1049.99, 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=200&fit=crop" alt="Bluetooth Speaker">
+                    <h3>Bluetooth Speaker</h3>
+                    <p class="price">£49.99</p>
+                    <p class="description">Portable Bluetooth speaker with 360-degree sound and waterproof design.</p>
+                    <button onclick="addToCart('Bluetooth Speaker', 49.99, 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=300&h=200&fit=crop" alt="Smartphone">
+                    <h3>Smartphone</h3>
+                    <p class="price">£699.99</p>
+                    <p class="description">Latest smartphone with advanced camera system and 5G connectivity.</p>
+                    <button onclick="addToCart('Smartphone', 699.99, 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=200&fit=crop" alt="Tablet">
+                    <h3>Tablet</h3>
+                    <p class="price">£399.99</p>
+                    <p class="description">10-inch tablet with high-resolution display and long battery life.</p>
+                    <button onclick="addToCart('Tablet', 399.99, 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <!-- Fashion Category -->
+                <div class="product-card" data-category="fashion">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop" alt="Running Shoes">
+                    <h3>Running Shoes</h3>
+                    <p class="price">£104.99</p>
+                    <p class="description">Comfortable running shoes with advanced cushioning and breathable material.</p>
+                    <button onclick="addToCart('Running Shoes', 104.99, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=200&fit=crop" alt="Leather Jacket">
+                    <h3>Leather Jacket</h3>
+                    <p class="price">£199.99</p>
+                    <p class="description">Premium leather jacket with classic design and modern fit.</p>
+                    <button onclick="addToCart('Leather Jacket', 199.99, 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop" alt="Designer Handbag">
+                    <h3>Designer Handbag</h3>
+                    <p class="price">£299.99</p>
+                    <p class="description">Luxury handbag made from genuine leather with elegant design.</p>
+                    <button onclick="addToCart('Designer Handbag', 299.99, 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=300&h=200&fit=crop" alt="Casual T-Shirt">
+                    <h3>Casual T-Shirt</h3>
+                    <p class="price">£24.99</p>
+                    <p class="description">Comfortable cotton t-shirt with modern fit and various colors available.</p>
+                    <button onclick="addToCart('Casual T-Shirt', 24.99, 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="fashion">
+                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=200&fit=crop" alt="Sunglasses">
+                    <h3>Designer Sunglasses</h3>
+                    <p class="price">£149.99</p>
+                    <p class="description">UV protection sunglasses with polarized lenses and stylish frame.</p>
+                    <button onclick="addToCart('Designer Sunglasses', 149.99, 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <!-- Home & Garden Category -->
+                <div class="product-card" data-category="home">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300&h=200&fit=crop" alt="Coffee Maker">
+                    <h3>Coffee Maker</h3>
+                    <p class="price">£64.99</p>
+                    <p class="description">Programmable coffee maker with built-in grinder and thermal carafe.</p>
+                    <button onclick="addToCart('Coffee Maker', 64.99, 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" alt="Air Purifier">
+                    <h3>Air Purifier</h3>
+                    <p class="price">£179.99</p>
+                    <p class="description">HEPA air purifier with smart features and quiet operation.</p>
+                    <button onclick="addToCart('Air Purifier', 179.99, 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop" alt="Smart Home Hub">
+                    <h3>Smart Home Hub</h3>
+                    <p class="price">£89.99</p>
+                    <p class="description">Central hub for controlling all your smart home devices.</p>
+                    <button onclick="addToCart('Smart Home Hub', 89.99, 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop" alt="Indoor Plant">
+                    <h3>Indoor Plant Set</h3>
+                    <p class="price">£34.99</p>
+                    <p class="description">Set of 3 low-maintenance indoor plants perfect for home decoration.</p>
+                    <button onclick="addToCart('Indoor Plant Set', 34.99, 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <!-- Sports Category -->
+                <div class="product-card" data-category="sports">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop" alt="Yoga Mat">
+                    <h3>Yoga Mat</h3>
+                    <p class="price">£39.99</p>
+                    <p class="description">Non-slip yoga mat with excellent grip and cushioning for all poses.</p>
+                    <button onclick="addToCart('Yoga Mat', 39.99, 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="sports">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop" alt="Dumbbells">
+                    <h3>Adjustable Dumbbells</h3>
+                    <p class="price">£129.99</p>
+                    <p class="description">Adjustable dumbbell set with weight range from 5kg to 25kg per dumbbell.</p>
+                    <button onclick="addToCart('Adjustable Dumbbells', 129.99, 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="sports">
+                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=300&h=200&fit=crop" alt="Basketball">
+                    <h3>Basketball</h3>
+                    <p class="price">£19.99</p>
+                    <p class="description">Official size basketball with premium grip and durability.</p>
+                    <button onclick="addToCart('Basketball', 19.99, 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=300&h=200&fit=crop')">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2>About QZ Stores</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Simple Shopping, Simply Better</h3>
+                    <p>Welcome to QZ Stores, where we make shopping beautifully simple. Since 2020, we've been simplifying the online shopping experience across the UK, offering a carefully curated selection of products that make your life easier.</p>
+                    
+                    <h3>Our Simple Mission</h3>
+                    <p>We believe shopping should be simple, stress-free, and enjoyable. Our mission is to provide high-quality products at great prices while keeping everything beautifully simple - from browsing to checkout to delivery.</p>
+                    
+                    <h3>Why Choose QZ Stores?</h3>
+                    <ul>
+                        <li><strong>Simple Selection:</strong> We curate only the best products, so you don't have to</li>
+                        <li><strong>Simple Delivery:</strong> Free delivery on orders over £50, with simple tracking</li>
+                        <li><strong>Simple Service:</strong> Our friendly team makes everything easy for you</li>
+                        <li><strong>Simple Returns:</strong> 30-day return policy - no questions, no hassle</li>
+                        <li><strong>Simple Security:</strong> Your payment is protected with bank-level security</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3>50K+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1000+</h3>
+                        <p>Products Available</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p>Customer Satisfaction</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Customer Support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch - Simply</h3>
+                    <p>Have a question? Need help? We make it simple to reach us. Choose your preferred way to connect!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>📧 Email</h4>
+                            <p>support@qzstores.co.uk</p>
+                            <p>orders@qzstores.co.uk</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h4>📞 Phone</h4>
+                            <p>+44 20 7946 0958</p>
+                            <p>Mon-Fri: 9AM-6PM</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h4>📍 Address</h4>
+                            <p>123 Shopping Street</p>
+                            <p>London, SW1A 1AA</p>
+                            <p>United Kingdom</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h4>💬 Live Chat</h4>
+                            <p>Available 24/7</p>
+                            <p>Click the chat icon in the bottom right</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Simple Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="general">General Inquiry</option>
+                                <option value="order">Order Support</option>
+                                <option value="return">Returns & Exchanges</option>
+                                <option value="product">Product Question</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button onclick="toggleCart()" class="close-cart">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: £<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <footer>
+        <p>&copy; 2024 QZ Stores. Shop the Simple Way</p>
+        <p>Created by Muhammad Qasim | Contact: qasimqasim@qasim.com</p>
+    </footer>
+
+    <script src="ecommerce.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - QZ Stores</title>
+    <link rel="stylesheet" href="ecommerce.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">QZ</div>
+                <div class="brand-info">
+                    <h1>QZ Stores</h1>
+                    <p class="slogan">Shop the Simple Way</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+                <div class="wishlist-icon" onclick="toggleWishlist()">
+                    ❤️ <span id="wishlist-count">0</span>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html" class="active">Help</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="help-section">
+            <h2>Help & Support</h2>
+            <p class="help-intro">Need help? We've got you covered! Find answers to common questions and get the support you need.</p>
+
+            <div class="help-content">
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    
+                    <div class="faq-item">
+                        <h4>How do I place an order?</h4>
+                        <p>Simply browse our products, click "Add to Cart" on items you want, then click the cart icon and proceed to checkout. It's that simple!</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>What payment methods do you accept?</h4>
+                        <p>We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and Apple Pay for a secure checkout experience.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>How much is delivery?</h4>
+                        <p>Delivery is free on orders over £50. For orders under £50, standard delivery is £4.99. Express delivery (next day) is available for £9.99.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>How long does delivery take?</h4>
+                        <p>Standard delivery takes 3-5 working days. Express delivery arrives the next working day. We'll send you tracking information once your order ships.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Can I return items?</h4>
+                        <p>Yes! We offer a 30-day return policy. Items must be in original condition with tags attached. Simply contact us to arrange a return.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>How do I track my order?</h4>
+                        <p>Once your order ships, you'll receive an email with tracking information. You can also check your order status in your account dashboard.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Do you ship internationally?</h4>
+                        <p>Currently, we only ship within the UK. We're working on international shipping and will announce it soon!</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>How do I change my account details?</h4>
+                        <p>Log into your account and go to "Account Settings" to update your personal information, delivery address, and payment methods.</p>
+                    </div>
+                </div>
+
+                <div class="help-categories">
+                    <h3>Help Categories</h3>
+                    
+                    <div class="help-category">
+                        <h4>🛒 Ordering & Checkout</h4>
+                        <ul>
+                            <li><a href="#ordering">How to place an order</a></li>
+                            <li><a href="#checkout">Checkout process</a></li>
+                            <li><a href="#payment">Payment methods</a></li>
+                            <li><a href="#coupons">Using discount codes</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="help-category">
+                        <h4>📦 Delivery & Shipping</h4>
+                        <ul>
+                            <li><a href="#delivery">Delivery options</a></li>
+                            <li><a href="#tracking">Track your order</a></li>
+                            <li><a href="#delivery-times">Delivery times</a></li>
+                            <li><a href="#international">International shipping</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="help-category">
+                        <h4>↩️ Returns & Exchanges</h4>
+                        <ul>
+                            <li><a href="#returns">Return policy</a></li>
+                            <li><a href="#exchanges">How to exchange</a></li>
+                            <li><a href="#refunds">Refund process</a></li>
+                            <li><a href="#return-shipping">Return shipping</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="help-category">
+                        <h4>👤 Account & Profile</h4>
+                        <ul>
+                            <li><a href="#account">Manage account</a></li>
+                            <li><a href="#password">Change password</a></li>
+                            <li><a href="#addresses">Update addresses</a></li>
+                            <li><a href="#orders">Order history</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="help-category">
+                        <h4>🔒 Security & Privacy</h4>
+                        <ul>
+                            <li><a href="#security">Security measures</a></li>
+                            <li><a href="#privacy">Privacy policy</a></li>
+                            <li><a href="#data">Data protection</a></li>
+                            <li><a href="#cookies">Cookie policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-support">
+                <h3>Still Need Help?</h3>
+                <p>Can't find what you're looking for? Our friendly support team is here to help!</p>
+                
+                <div class="support-options">
+                    <div class="support-option">
+                        <h4>📧 Email Support</h4>
+                        <p>Get help via email within 24 hours</p>
+                        <a href="mailto:support@qzstores.co.uk" class="support-btn">Email Us</a>
+                    </div>
+                    
+                    <div class="support-option">
+                        <h4>💬 Live Chat</h4>
+                        <p>Chat with us in real-time</p>
+                        <button class="support-btn" onclick="alert('Live chat coming soon!')">Start Chat</button>
+                    </div>
+                    
+                    <div class="support-option">
+                        <h4>📞 Phone Support</h4>
+                        <p>Call us Monday-Friday 9AM-6PM</p>
+                        <a href="tel:+441234567890" class="support-btn">Call Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button onclick="toggleCart()" class="close-cart">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: £<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Wishlist Sidebar -->
+    <div id="wishlist-sidebar" class="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h3>My Wishlist</h3>
+            <button onclick="toggleWishlist()" class="close-wishlist">×</button>
+        </div>
+        <div id="wishlist-items" class="wishlist-items">
+            <!-- Wishlist items will be added here dynamically -->
+        </div>
+        <div class="wishlist-footer">
+            <p class="wishlist-count">Items: <span id="wishlist-total-count">0</span></p>
+        </div>
+    </div>
+
+    <!-- Wishlist Overlay -->
+    <div id="wishlist-overlay" class="wishlist-overlay" onclick="toggleWishlist()"></div>
+
+    <footer>
+        <p>&copy; 2024 QZ Stores. Shop the Simple Way</p>
+        <p>Created by Muhammad Qasim | Contact: qasimqasim@qasim.com</p>
+    </footer>
+
+    <script src="ecommerce.js"></script>
+</body>
+</html>

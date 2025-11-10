@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - QZ Stores</title>
+    <link rel="stylesheet" href="ecommerce.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">QZ</div>
+                <div class="brand-info">
+                    <h1>QZ Stores</h1>
+                    <p class="slogan">Shop the Simple Way</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+                <div class="wishlist-icon" onclick="toggleWishlist()">
+                    ❤️ <span id="wishlist-count">0</span>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch - Simply</h3>
+                    <p>Have a question? Need help? We make it simple to reach us. Choose your preferred way to connect!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="icon">📧</div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>General inquiries: hello@qzstores.co.uk</p>
+                                <p>Support: support@qzstores.co.uk</p>
+                                <p>Orders: orders@qzstores.co.uk</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="icon">📞</div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p>Saturday: 10:00 AM - 4:00 PM</p>
+                                <p>Phone: +44 123 456 7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="icon">📍</div>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>QZ Stores Headquarters</p>
+                                <p>123 Simple Street</p>
+                                <p>London, UK SW1A 1AA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="icon">💬</div>
+                            <div>
+                                <h4>Live Chat</h4>
+                                <p>Available 24/7 for quick help</p>
+                                <p>Click the chat icon in the bottom right</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-hours">
+                        <h4>Business Hours</h4>
+                        <div class="hours-grid">
+                            <div class="hours-item">
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Saturday</span>
+                                <span class="time">10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Sunday</span>
+                                <span class="time">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Simple Message</h3>
+                    <form id="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required minlength="2" autocomplete="name" aria-describedby="name-error">
+                            <small class="form-error" id="name-error" role="alert"></small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required inputmode="email" autocomplete="email" aria-describedby="email-error">
+                            <small class="form-error" id="email-error" role="alert"></small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" pattern="^\\+?[0-9\\s()-]{7,20}$" inputmode="tel" autocomplete="tel" aria-describedby="phone-error">
+                            <small class="form-error" id="phone-error" role="alert"></small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required aria-describedby="subject-error">
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="order">Order Support</option>
+                                <option value="return">Returns & Exchanges</option>
+                                <option value="product">Product Question</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <small class="form-error" id="subject-error" role="alert"></small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="order-number">Order Number (if applicable)</label>
+                            <input type="text" id="order-number" name="order-number" pattern="^[A-Za-z0-9-]{0,24}$" aria-describedby="order-error">
+                            <small class="form-error" id="order-error" role="alert"></small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required minlength="10" placeholder="Please describe your inquiry in detail..." aria-describedby="message-error"></textarea>
+                            <small class="form-error" id="message-error" role="alert"></small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for updates and special offers
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h3>Find Us</h3>
+            <div class="map-placeholder">
+                <div class="map-content">
+                    <h4>📍 QZ Stores Headquarters</h4>
+                    <p>123 Simple Street, London, UK SW1A 1AA</p>
+                    <p>Nearest Tube: Westminster Station (5 min walk)</p>
+                    <p>Parking: Limited street parking available</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button onclick="toggleCart()" class="close-cart">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: £<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Wishlist Sidebar -->
+    <div id="wishlist-sidebar" class="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h3>My Wishlist</h3>
+            <button onclick="toggleWishlist()" class="close-wishlist">×</button>
+        </div>
+        <div id="wishlist-items" class="wishlist-items">
+            <!-- Wishlist items will be added here dynamically -->
+        </div>
+        <div class="wishlist-footer">
+            <p class="wishlist-count">Items: <span id="wishlist-total-count">0</span></p>
+        </div>
+    </div>
+
+    <!-- Wishlist Overlay -->
+    <div id="wishlist-overlay" class="wishlist-overlay" onclick="toggleWishlist()"></div>
+
+    <footer>
+        <p>&copy; 2024 QZ Stores. Shop the Simple Way</p>
+        <p>Created by Muhammad Qasim | Contact: qasimqasim@qasim.com</p>
+    </footer>
+
+    <script src="ecommerce.js"></script>
+</body>
+</html>

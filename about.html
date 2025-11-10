@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - QZ Stores</title>
+    <link rel="stylesheet" href="ecommerce.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">QZ</div>
+                <div class="brand-info">
+                    <h1>QZ Stores</h1>
+                    <p class="slogan">Shop the Simple Way</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+                <div class="wishlist-icon" onclick="toggleWishlist()">
+                    ❤️ <span id="wishlist-count">0</span>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="about-section">
+            <h2>About QZ Stores</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Simple Shopping, Simply Better</h3>
+                    <p>Welcome to QZ Stores, where we make shopping beautifully simple. Since 2020, we've been simplifying the online shopping experience across the UK, offering a carefully curated selection of products that make your life easier.</p>
+                    
+                    <h3>Our Simple Mission</h3>
+                    <p>We believe shopping should be simple, stress-free, and enjoyable. Our mission is to provide high-quality products at great prices while keeping everything beautifully simple - from browsing to checkout to delivery.</p>
+                    
+                    <h3>Why Choose QZ Stores?</h3>
+                    <ul>
+                        <li><strong>Simple Selection:</strong> We curate only the best products, so you don't have to</li>
+                        <li><strong>Simple Delivery:</strong> Free delivery on orders over £50, with simple tracking</li>
+                        <li><strong>Simple Service:</strong> Our friendly team makes everything easy for you</li>
+                        <li><strong>Simple Returns:</strong> 30-day return policy - no questions, no hassle</li>
+                        <li><strong>Simple Security:</strong> Your payment is protected with bank-level security</li>
+                    </ul>
+
+                    <h3>Our Story</h3>
+                    <p>Founded by Muhammad Qasim in 2020, QZ Stores began with a simple idea: online shopping should be as easy as walking into your favorite local store. We started small, but our commitment to simplicity and quality quickly made us a trusted name in UK e-commerce.</p>
+                    
+                    <p>Today, we serve thousands of customers across the country, but we've never lost sight of our original vision. Every product we sell, every feature we add, and every decision we make is guided by one principle: Keep it simple.</p>
+
+                    <h3>Our Values</h3>
+                    <ul>
+                        <li><strong>Simplicity First:</strong> We believe in the power of simple, elegant solutions</li>
+                        <li><strong>Quality Always:</strong> Every product meets our high standards for quality and value</li>
+                        <li><strong>Customer Focus:</strong> Your satisfaction is our success</li>
+                        <li><strong>Transparency:</strong> Clear pricing, honest descriptions, no hidden fees</li>
+                        <li><strong>Innovation:</strong> We continuously improve to make shopping even simpler</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3>50K+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1000+</h3>
+                        <p>Products Available</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p>Customer Satisfaction</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Customer Support</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4+</h3>
+                        <p>Years of Service</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>£2M+</h3>
+                        <p>Orders Processed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">👨‍💼</div>
+                    <h3>Muhammad Qasim</h3>
+                    <p class="member-role">Founder & CEO</p>
+                    <p class="member-bio">Passionate about simplifying e-commerce and creating amazing customer experiences.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👩‍💻</div>
+                    <h3>Sarah Johnson</h3>
+                    <p class="member-role">Head of Customer Service</p>
+                    <p class="member-bio">Ensuring every customer interaction is simple, helpful, and delightful.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👨‍🔧</div>
+                    <h3>Mike Wilson</h3>
+                    <p class="member-role">Technology Director</p>
+                    <p class="member-bio">Building the technology that makes shopping simple and secure.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button onclick="toggleCart()" class="close-cart">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: £<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Wishlist Sidebar -->
+    <div id="wishlist-sidebar" class="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h3>My Wishlist</h3>
+            <button onclick="toggleWishlist()" class="close-wishlist">×</button>
+        </div>
+        <div id="wishlist-items" class="wishlist-items">
+            <!-- Wishlist items will be added here dynamically -->
+        </div>
+        <div class="wishlist-footer">
+            <p class="wishlist-count">Items: <span id="wishlist-total-count">0</span></p>
+        </div>
+    </div>
+
+    <!-- Wishlist Overlay -->
+    <div id="wishlist-overlay" class="wishlist-overlay" onclick="toggleWishlist()"></div>
+
+    <footer>
+        <p>&copy; 2024 QZ Stores. Shop the Simple Way</p>
+        <p>Created by Muhammad Qasim | Contact: qasimqasim@qasim.com</p>
+    </footer>
+
+    <script src="ecommerce.js"></script>
+</body>
+</html>
