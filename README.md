@@ -4,13 +4,13 @@ A modern, responsive e-commerce website built with HTML, CSS, and JavaScript.
 
 ## Features
 
-- 🔐 **Authentication System** - Login/Create Account gate with form validation
-- 🛒 **Shopping Cart** - Add/remove items with persistent storage
-- ❤️ **Wishlist** - Save favorite products for later
-- 🌙 **Dark/Light Theme** - Toggle between themes with persistent preference
-- 📱 **Responsive Design** - Works on all devices
-- 📝 **Form Validation** - Contact form with comprehensive validation
-- 🎨 **Modern UI** - Clean, minimalist design with smooth animations
+-  **Authentication System** - Login/Create Account gate with form validation
+-  **Shopping Cart** - Add/remove items with persistent storage
+-  **Wishlist** - Save favorite products for later
+-  **Dark/Light Theme** - Toggle between themes with persistent preference
+-  **Responsive Design** - Works on all devices
+-  **Form Validation** - Contact form with comprehensive validation
+-  **Modern UI** - Clean, minimalist design with smooth animations
 
 ## Pages
 
@@ -87,9 +87,6 @@ A modern, responsive e-commerce website built with HTML, CSS, and JavaScript.
 - Safari (latest)
 - Edge (latest)
 
-## License
-
-This project is open source and available under the MIT License.
 
 ## Author
 
