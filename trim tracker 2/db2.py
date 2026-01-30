@@ -1,7 +1,6 @@
 import os
 import sqlite3
 
-# queue.db next to db2.py, or in services2/templates, or project root
 _ROOT = os.path.dirname(os.path.abspath(__file__))
 _db_candidates = [
     os.path.join(_ROOT, "queue.db"),
