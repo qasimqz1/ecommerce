@@ -137,3 +137,42 @@ def update_customer_status(public_ref, new_status):
     finally:
         if db:
             db.close()
+
+
+def get_active_queue():
+    db = None
+    try:
+        db = get_db()
+        cur = db.cursor()
+
+        cur.execute(
+            """
+            SELECT
+                q.id,
+                q.public_ref,
+                q.service_id,
+                q.status,
+                q.created_at,
+                s.name AS service_name,
+                COALESCE(s.duration_mins, 0) AS duration_mins
+            FROM QueueEntry q
+            LEFT JOIN Service s ON q.service_id = s.id
+            WHERE q.status IN (?, ?)
+            ORDER BY q.created_at ASC
+            """,
+            ACTIVE_STATUSES,
+        )
+
+        return {"queue": cur.fetchall()}
+
+    except sqlite3.Error as e:
+        print(f"Database error in get_active_queue: {e}")
+        return {"error": "Database error occurred"}
+
+    except Exception as e:
+        print(f"Unexpected error in get_active_queue: {e}")
+        return {"error": "An unexpected error occurred"}
+
+    finally:
+        if db:
+            db.close()

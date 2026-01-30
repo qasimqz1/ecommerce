@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Staff Dashboard - Trim Tracker</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+      table { border-collapse: collapse; width: 100%; }
+      th, td { border-bottom: 1px solid #e6e6e6; padding: 10px 8px; text-align: left; }
+      th { background: #fafafa; font-weight: 600; }
+      .muted { color: #666; font-size: 0.9rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Active Queue</h1>
+    <p class="muted">Ordered by created_at (ASC). Status filter: Waiting, In Chair.</p>
+
+    {% if queue and queue|length > 0 %}
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Public Ref</th>
+            <th>Status</th>
+            <th>Service</th>
+            <th>Duration (mins)</th>
+            <th>Created At</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in queue %}
+            <tr>
+              <td>{{ loop.index }}</td>
+              <td>{{ entry["public_ref"] }}</td>
+              <td>{{ entry["status"] }}</td>
+              <td>{{ entry["service_name"] or "" }}</td>
+              <td>{{ entry["duration_mins"] or 0 }}</td>
+              <td>{{ entry["created_at"] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No active customers.</p>
+    {% endif %}
+  </body>
+</html>

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
-from services2.status_service2 import get_customer_status, update_customer_status
+from services2.status_service2 import get_customer_status, update_customer_status, get_active_queue
 
 app = Flask(__name__, template_folder="services2/templates")
 
@@ -57,6 +57,15 @@ def staff_status_update():
         return jsonify(merged), 200
 
     return redirect(url_for("status_view", public_ref=public_ref))
+
+
+@app.get("/staff/dashboard")
+def staff_dashboard():
+    result = get_active_queue()
+    if "error" in result:
+        return result["error"], 500
+
+    return render_template("staff_dashboard.html", queue=result["queue"])
 
 
 if __name__ == "__main__":
